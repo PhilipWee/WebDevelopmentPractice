@@ -5,6 +5,28 @@
 		<!-- Define what it says for the tab -->
 		<title>HTML practice file</title>
 		<meta charset="UTF-8">
+		<!-- Internal CSS -->
+		<style>
+		<!-- below code gets overriden by styles applied specifically to elements -->
+		body {background-color:MediumSeaGreen;}
+		p{
+		color:red;
+		font-size:30px;
+		font-family:courier;
+		border: 1px solid MediumSeaGreen;
+		/*Space between text and border*/
+		padding:10px;
+		/*Space between border and window*/
+		margin:50px;
+		}
+		#p01{
+		font-size:160px;
+		}
+		
+		</style>
+		<!-- External Style sheets can be linked -->
+		<link rel="stylesheet" href="styles.css">
+		
 		
 	</head>
 	<!-- Apply a style to the whole webpage -->
@@ -87,5 +109,17 @@ the end
 		Google is a pretty big company
 		</blockquote>
 		<!-- Abbreviations -->
+		<p>I study at <abbr title="Singapore University of Technology and Design">SUTD</abbr></abbr></p>
+		<!-- Addresses -->
+		<address>
+		Written by Philip Wee
+		</address>
+		<!-- Title of piece of work -->
+		<img src="carousel.jpg">
+		<p><cite>The Carousel</cite> A work stolen from google</p>
+		<!-- colors -->
+		<h2 style="color:Tomato;border:3px solid DodgerBlue;background-color:MediumSeaGreen;">Hello World</h2>
+		<!-- id attribute specific element -->
+		<p id="p01">I AM THE SPECIAL P01</p>
 	</body>
 </html>

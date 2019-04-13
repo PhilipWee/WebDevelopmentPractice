@@ -9,20 +9,106 @@
 		<style>
 		<!-- below code gets overriden by styles applied specifically to elements -->
 		body {background-color:MediumSeaGreen;}
+		
 		p{
-		color:red;
-		font-size:30px;
-		font-family:courier;
-		border: 1px solid MediumSeaGreen;
-		/*Space between text and border*/
-		padding:10px;
-		/*Space between border and window*/
-		margin:50px;
+			color:red;
+			font-size:30px;
+			font-family:courier;
+			border: 1px solid MediumSeaGreen;
+			/*Space between text and border*/
+			padding:10px;
+			/*Space between border and window*/
+			margin:50px;
 		}
 		#p01{
-		font-size:160px;
+			font-size:160px;
 		}
 		
+		/*make sure to store classes inside the style container*/
+		
+		.bold{
+			font-weight:bold;
+		}
+		
+		/*Adjusting link colors*/
+		
+		a:link {
+		  color: green;
+		  background-color: transparent;
+		  text-decoration: none;
+		}
+
+		a:visited {
+		  color: pink;
+		  background-color: transparent;
+		  text-decoration: none;
+		}
+
+		a:hover {
+		  color: red;
+		  background-color: transparent;
+		  text-decoration: underline;
+		}
+
+		a:active {
+		  color: yellow;
+		  background-color: transparent;
+		  text-decoration: underline;
+		}
+		
+		/* Popup container */
+		.popup {
+			position: relative;
+			display: inline-block;
+			cursor: pointer;
+		}
+
+		/* Actual popup */
+		.popup .popuptext{
+			visibility: hidden;
+			width: 160px;
+			background-color: #555;
+			color: #fff;
+			text-align: center;
+			border-radius: 6px;
+			padding: 8px 0;
+			position: absolute;
+			z-index: 1;
+			bottom: 125%;
+			left: 50%;
+			margin-left: -80px;
+		}
+
+		/* Popup arrow */
+		.popup .popuptext::after {
+			content: "";
+			position: absolute;
+			top: 100%;
+			left: 50%;
+			margin-left: -5px;
+			border-width: 5px;
+			border-style: solid;
+			border-color: #555 transparent transparent transparent;
+		}
+
+		/* Toggle this class when clicking on the popup container (hide and show the popup) */
+		.popup .show {
+		  visibility: visible;
+		  -webkit-animation: fadeIn 1s;
+		  animation: fadeIn 1s
+		}
+
+		/* Add animation (fade in the popup) */
+		@-webkit-keyframes fadeIn {
+			from {opacity: 0;}
+			to {opacity: 1;}
+		}
+
+		@keyframes fadeIn {
+			from {opacity: 0;}
+			to {opacity:1 ;}
+		}
+
 		</style>
 		<!-- External Style sheets can be linked -->
 		<link rel="stylesheet" href="styles.css">
@@ -33,21 +119,27 @@
 	<body style="background-color:powderblue;">
 		<!-- Sample heading -->
 		<!-- Use headings for headings only dont use it to make stuff big -->
-		<h1 style="font-size:60px;">Header big</h1>
+		<h1 id="top" style="font-size:60px;">Header big</h1>
 		<h5>Header small</h2>
 		<!-- Horizontal rules -->
 		<hr />
 		<!-- Sample body para -->
 		<p>test</p>
 		<!-- Sample link, make sure to include https www to access website -->
-		<a href="https://www.google.com">google</a>
+		<!-- _blank for new tab, _self for current tab also can use targeted iframes -->
+		<a href="https://www.google.com" target="_parent">google</a>
+		<!-- Using images as links -->
+		<a href="https://www.google.com/search?client=firefox-b-d&q=carousel" target="_blank">
+			<img src="carousel.jpg" alt="carousel">
+		</a>
 		<!-- To make sure the link goes on top -->
 		<br />
 		<!-- this link goes back to itself -->
 		<a href="">self</a>
 		<br />
 		<!-- images, remember to include file type-->
-		<img src="carousel.jpg" alt="carousel pic"></img>
+		<!-- Recommended to use style to adjust size, so style sheets do not change the style -->
+		<img src="carousel.jpg" alt="carousel pic" style="width:20px;height:20px"></img>
 		<!-- buttons -->
 		<br />
 		<button>Click me dude</button>
@@ -121,5 +213,52 @@ the end
 		<h2 style="color:Tomato;border:3px solid DodgerBlue;background-color:MediumSeaGreen;">Hello World</h2>
 		<!-- id attribute specific element -->
 		<p id="p01">I AM THE SPECIAL P01</p>
+		<!-- classes -->
+		<p class="bold">All objects of this class are bold</p>
+		<!-- bookmarks jump to end or top-->
+		<a href="#top">Jump to top</a>
+		<p><img src="carousel.jpg" alt="carousel" style="float:left;width:10px;height:20px">
+		The image gonna float on the left yo
+		</p>
+		<!-- Image mapping clickable areas on image -->
+		<img src="workplace.jpg" alt="Workplace" usemap="#workmap">
+
+		<map name="workmap">
+		  <area shape="rect" coords="34,44,270,350" alt="Computer" title="computer">
+		  <area shape="rect" coords="290,172,333,250" alt="Phone" title="phone">
+		  <area shape="circle" coords="337,300,44" alt="Coffee" title="coffee">
+		</map>
+		<!-- Background images -->
+		<p style="background-image:url('carousel.jpg');">CAROUSEL</p>
+		<!-- popups pop ups -->
+		<div class="popup" onclick="myFunction()">Click me!
+			<span class="popuptext" id="myPopup">
+				The popup text goes here
+			</span>
+		</div>
+		<script>
+			// When the user clicks on <div>, open the popup
+			function myFunction() {
+				var popup = document.getElementById("myPopup");
+				popup.classList.toggle("show");
+			}
+		</script>
+		<!-- Tables HTML rowspan columnspan -->
+		<table style="width:100%">
+		<caption style="text-align:center-left">This is bill gates stuff</caption>
+		<tr>
+			<th>Name:</th>
+			<td>Bill Gates</td>
+		</tr>
+		<tr>
+			<th rowspan="2">Telephone:</th>
+			<td>55577854</td>
+		</tr>
+		<tr>
+			<td>55577855</td>
+		</tr>
+		</table> 
 	</body>
 </html>
+
+

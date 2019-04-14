@@ -1,0 +1,100 @@
+body{
+	background-image:url("Website Background.jpg");
+}
+
+p,h1,h2,h3,h4,h5,h6{
+	color:white;	
+}
+
+.cardpair {
+	position: absolute;
+	width:50%;
+	padding-top:50%;
+	top:40%;
+	left: 25%;
+	background:#1E4445;
+	border-radius:50%;
+	border-width:1px;
+	border-color:black;
+	border-style:solid;
+}
+
+.cardpairimage {
+	position:absolute;
+	bottom:15%;
+	left:15%;
+	width:70%;
+	padding-top:70%;
+}
+
+.CompanyName {
+  position: relative;
+  background-color: black;
+  height: 30vh;
+  min-height: 20rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+.CompanyName video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.spacefromtop50 {
+	position:relative;
+	top: 50%;
+}
+
+.CompanyName .container {
+  position: relative;
+  z-index: 2;
+}
+
+.CompanyName .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.82;
+  z-index: 1;
+}
+
+.carousel .overlay {
+  position: absolute;
+  top: 85%;
+  left: 0;
+  height: 15%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.82;
+  z-index: 1;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
